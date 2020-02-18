@@ -1,0 +1,3 @@
+ExitWindows.c(6): Warning! W303: Parameter 'hInstance' has been defined, but not referenced
+ExitWindows.c(6): Warning! W303: Parameter 'hPrevInstance' has been defined, but not referenced
+ExitWindows.c(6): Warning! W303: Parameter 'nCmdShow' has been defined, but not referenced

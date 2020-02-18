@@ -1,0 +1,1 @@
+exitwindows /b

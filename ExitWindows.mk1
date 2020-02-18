@@ -1,0 +1,34 @@
+!define BLANK ""
+C:\WATCOM\ExitWindows\ExitWindows.obj : C:\WATCOM\ExitWindows\ExitWindows.c &
+.AUTODEPEND
+ @C:
+ cd C:\WATCOM\ExitWindows
+ *wcc ExitWindows.c -i="C:\WATCOM/h;C:\WATCOM/h/win" -w4 -e25 -zq -od -d2 -b&
+t=windows -fo=.obj -ml
+
+C:\WATCOM\ExitWindows\ExitWindows.res : C:\WATCOM\ExitWindows\ExitWindows.rc&
+ .AUTODEPEND
+ @C:
+ cd C:\WATCOM\ExitWindows
+ *wrc ExitWindows.rc -bt=windows -i="$[:;C:\WATCOM/h;C:\WATCOM/h/win" -q -ad&
+ -r -fo=ExitWindows.res
+
+C:\WATCOM\ExitWindows\ExitWindows.exe : C:\WATCOM\ExitWindows\ExitWindows.ob&
+j C:\WATCOM\ExitWindows\ExitWindows.h C:\WATCOM\ExitWindows\ExitWindows.res &
+.AUTODEPEND
+ @C:
+ cd C:\WATCOM\ExitWindows
+ @%write ExitWindows.lk1 FIL ExitWindows.obj
+ @%append ExitWindows.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b ExitWindows.imp 
+ @%append ExitWindows.lk1 LIBR ExitWindows.imp
+!endif
+!ifneq BLANK "ExitWindows.res"
+ @%append ExitWindows.lk1 op resource=ExitWindows.res
+!endif
+ *wlink name ExitWindows d all sys windows op m op maxe=25 op q op symf @Exi&
+tWindows.lk1
+!ifneq BLANK "ExitWindows.res"
+!endif
+

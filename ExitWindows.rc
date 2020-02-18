@@ -1,0 +1,37 @@
+#include <ver.h>
+
+ExitWindows ICON ExitWindows.ico
+
+VS_VERSION_INFO VERSIONINFO DISCARDABLE
+FILEVERSION    1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEFLAGSMASK  VS_FFI_FILEFLAGSMASK
+#if defined(DEBUG) || defined(_DEBUG)
+ FILEFLAGS VS_FF_DEBUG
+#else
+ FILEFLAGS 0x0L
+#endif
+FILEOS         VOS__WINDOWS16
+FILETYPE       VFT_APP
+FILESUBTYPE    VFT2_UNKNOWN
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904e4"
+    BEGIN
+      VALUE "Comments",         " \0"
+      VALUE "CompanyName",      " \0"
+      VALUE "FileDescription",  "ExitWindows App\0"
+      VALUE "FileVersion",      "1, 0, 0, 0\0"
+      VALUE "InternalName",     "ExitWindows\0"
+      VALUE "LegalCopyright",   "GPLv2 Anthony Shields\0"
+      VALUE "OriginalFilename", "ExitWindows.exe\0"
+      VALUE "ProductName",      "Exit Windows App\0"
+      VALUE "ProductVersion",   "1, 0, 0, 0\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 1252
+  END
+END
